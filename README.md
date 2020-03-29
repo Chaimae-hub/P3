@@ -14,6 +14,17 @@ Ejercicios básicos
   `get_pitch`.
 
    * Complete el cálculo de la autocorrelación e inserte a continuación el código correspondiente.
+   
+   ```
+   for (unsigned int l = 0; l < r.size(); ++l) {
+  	/// Compute the autocorrelation r[l]
+	r[l] = 0;
+    	for(unsigned int k = l; k < x.size();k++){
+        	r[l] += x[k] * x[k - l];
+      	}
+      	r[l] /= x.size();
+   }
+   ```
 
    * Inserte una gŕafica donde, en un *subplot*, se vea con claridad la señal temporal de un sonido sonoro
      y su periodo de pitch; y, en otro *subplot*, se vea con claridad la autocorrelación de la señal y la
@@ -24,9 +35,29 @@ Ejercicios básicos
 
    * Determine el mejor candidato para el periodo de pitch localizando el primer máximo secundario de la
      autocorrelación. Inserte a continuación el código correspondiente.
+     
+   ```  
+   for(iRactual = iR + npitch_min; iRactual < iR + npitch_max; iRactual++) {
+      if(*iRactual > *iRMax) {
+        iRMax = iRactual;
+      }
+    }
+    unsigned int lag = 0;
+
+    if (iRMax != r.end())
+      lag = iRMax - r.begin();
+
+    float pot = 10 * log10(r[0]);
+
+    ```
 
    * Implemente la regla de decisión sonoro o sordo e inserte el código correspondiente.
-
+   ```
+   if(pot <= 0 && r1norm<0.8839F)
+      return true;
+   else
+      return false;
+   ```
 - Una vez completados los puntos anteriores, dispondrá de una primera versión del detector de pitch. El 
   resto del trabajo consiste, básicamente, en obtener las mejores prestaciones posibles con él.
 
