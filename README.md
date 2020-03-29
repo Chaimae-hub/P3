@@ -86,6 +86,34 @@ Ejercicios básicos
   * Optimice los parámetros de su sistema de detección de pitch e inserte una tabla con las tasas de error
     y el *score* TOTAL proporcionados por `pitch_evaluate` en la evaluación de la base de datos 
 	`pitch_db/train`..
+	
+   | File | Unvoiced frames as voiced | Voiced frames as unvoiced | Gross voiced errors | MSE of fine errors | TOTAL |
+   | ----------------- | ----------------- | ----------------- | ----------------- | ----------------- | ----------------- |
+   | rl002| 15.66% | 0.00% | 5.88% | 2.09% | 87.05% |
+   | rl004| 15.66% |   $12 | $1600 | $1600 | $1600 |
+   | rl006| 15.66% |    $1 | $1600 | $1600 | $1600 |
+   | rl008| 15.66% | $1600 | $1600 | $1600 | $1600 |
+   | rl010| centered      |   $12 | $1600 | $1600 | $1600 |
+   | rl012| are neat      |    $1 | $1600 | $1600 | $1600 |
+   | rl014| right-aligned | $1600 | $1600 | $1600 | $1600 |
+   | rl016| centered      |   $12 | $1600 | $1600 | $1600 |
+   | rl018| are neat      |    $1 | $1600 | $1600 | $1600 |
+   | rl020| right-aligned | $1600 | $1600 | $1600 | $1600 |
+   | rl022| centered      |   $12 | $1600 | $1600 | $1600 |
+   | rl024| are neat      |    $1 | $1600 | $1600 | $1600 |
+   | rl026| right-aligned | $1600 | $1600 | $1600 | $1600 |
+   | rl028| centered      |   $12 | $1600 | $1600 | $1600 |
+   | rl030| are neat      |    $1 | $1600 | $1600 | $1600 |
+   | rl032| right-aligned | $1600 | $1600 | $1600 | $1600 |
+   | rl034| centered      |   $12 | $1600 | $1600 | $1600 |
+   | rl036| are neat      |    $1 | $1600 | $1600 | $1600 |
+   | rl038| right-aligned | $1600 | $1600 | $1600 | $1600 |
+   | rl040| centered      |   $12 | $1600 | $1600 | $1600 |
+   | rl042| are neat      |    $1 | $1600 | $1600 | $1600 |
+   | rl044| right-aligned | $1600 | $1600 | $1600 | $1600 |
+   | rl046| centered      |   $12 | $1600 | $1600 | $1600 |
+   | rl048| are neat      |    $1 | $1600 | $1600 | $1600 |
+   | rl050| right-aligned | $1600 | $1600 | $1600 | $1600 |
 
    * Inserte una gráfica en la que se vea con claridad el resultado de su detector de pitch junto al del
      detector de Wavesurfer. Aunque puede usarse Wavesurfer para obtener la representación, se valorará
